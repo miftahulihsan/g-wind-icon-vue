@@ -1,5 +1,5 @@
 import { defineComponent, h, ref, watch } from "vue";
-import "../style.css"
+
 
 const GIcon = defineComponent({
   name: "GIcon",
