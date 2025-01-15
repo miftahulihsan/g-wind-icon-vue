@@ -1,4 +1,7 @@
-export const iconCall : string[] = [
+export const GIconCall : string[] = [
+
+    //icon-name
+    "GIconCall",
 
     //viewbox
     "24 24",

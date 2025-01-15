@@ -1,2 +1,5 @@
-import { GIcon } from "./components/GIcon";
-export default GIcon
+
+import GIcon from "./components/GIcon";
+
+
+export { GIcon }

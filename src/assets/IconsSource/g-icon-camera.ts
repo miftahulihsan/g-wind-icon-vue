@@ -1,4 +1,7 @@
-export const iconCamera : string[] = [
+export const GIconCamera : string[] = [
+
+    //icon-name
+    "GIconCamera",
 
     //viewbox
     "24 24",

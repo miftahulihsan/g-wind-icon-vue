@@ -1,4 +1,5 @@
 import { defineComponent, h, ref, watch } from "vue";
+import * as Icon from "../assets/IconsSource"
 
 
 const GIcon = defineComponent({
@@ -49,11 +50,11 @@ const GIcon = defineComponent({
       )
 
     const getIconFinal = (() =>{
-       return props.weight === "fill" ? _icon.value[1] : _icon.value[2]
+       return props.weight === "fill" ? _icon.value[2] : _icon.value[3]
     })()
 
     const getViewBox = (() => {
-        return _icon.value[0]
+        return _icon.value[1]
     })()
 
 
@@ -61,17 +62,21 @@ const GIcon = defineComponent({
       return [attrs.class, props.size && `g-icon-${props.size}`, props.color && props.color]
     })()
 
-    return () =>
-      h("svg", {
-        ...attrs,
-        xmlns: "http://www.w3.org/2000/svg",  
-        fill: "currentColor",
-        class: getClassName,
-        viewBox: `${attrs.viewBox? attrs.viewBox : `0 0 ${getViewBox}`}`,
-        innerHTML: getIconFinal, // Menggunakan innerHTML untuk memasukkan konten SVG
-        role: "img",
-      });
+    return () => 
+      getIconFinal === "undefined" ?
+        console.error(props.icon[0]+" " + props.weight + " is not available")
+      :
+        h("svg", {
+          ...attrs,
+          xmlns: "http://www.w3.org/2000/svg",  
+          fill: "currentColor",
+          class: getClassName,
+          viewBox: `${attrs.viewBox? attrs.viewBox : `0 0 ${getViewBox}`}`,
+          innerHTML: getIconFinal, // Menggunakan innerHTML untuk memasukkan konten SVG
+          role: "img",
+        });
+    
   },
 });
 
-export { GIcon };
+export default GIcon ;
