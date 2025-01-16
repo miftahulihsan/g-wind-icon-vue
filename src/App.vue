@@ -756,6 +756,7 @@
   width: 90%;
   height: 64px;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 8px;
   border: 1px solid #ebebeb;
